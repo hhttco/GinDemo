@@ -1,0 +1,15 @@
+{{define "public/user_dash"}}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    {{ template "public/user_header" .}}
+</head>
+<body>
+    <div>
+        {{ template `.tplName` .}}
+    </div>
+
+    {{ template "public/user_footer" .}}
+</body>
+</html>
+{{end}}

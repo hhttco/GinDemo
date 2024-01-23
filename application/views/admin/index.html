@@ -1,0 +1,50 @@
+{{define "admin/index.html"}} {{ template "admin/base" .}} {{end}}
+{{define "content"}}
+    <style type="text/css">
+        body,html{
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+            background:url(../static/images/lg_bg.jpg) no-repeat;
+            background-size:100% 100%;
+        }
+        .s_center{float: none;}
+    </style>
+
+    <div class="s_center container col-lg-3 ">
+
+        <form class="form-signin" enctype="multipart/form-data"  method="post">
+            <br/>
+            <label  class="sr-only">密码</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" required>
+            <br />
+            <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login.check()">登录</button>
+        </form>
+
+    </div>
+
+    <script type="text/javascript">
+        let login = {
+            check : function(){
+                let password = $('#inputPassword').val();
+
+                if(!password){
+                    alert('密码不能为空');return;
+                }
+
+                let url  = "/admin/login";
+                let data = {'password':password};
+
+                $.post(url, data, function(data){
+                    if(data['code']==0){
+                        // location.href="/admin/lookplat";
+                        console.info(data);
+                    }else{
+                        alert(data['data']);return;
+                    }
+                },'JSON');
+            }
+        }
+    </script>
+
+{{end}}

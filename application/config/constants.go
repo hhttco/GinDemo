@@ -1,0 +1,11 @@
+package config
+
+// 应用常量定义
+const (
+	K_SYS_TIME_FORMAT     = "2006-01-02 15:04:05"
+	K_SYS_DATE_FORMAT     = "2006-01-02"
+	K_SYS_MONTH_FORMAT    = "2006-01"
+	K_SYS_MONTH_FORMAT_CN = "2006年01月"
+	K_SYS_TIME_FORMAT_CN  = "2006年01月02月 15时04分05秒"
+	K_SYS_DATE_FORMAT_SN  = "2006/1/2"
+)
